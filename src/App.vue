@@ -1,6 +1,6 @@
 <template>
-  <div v-if="!isLogging">
-    <LoginPage @logging="logging" />
+  <div v-if="!isLogin">
+    <LoginPage @login="login" />
   </div>
   <div v-else>
     <div id="nav">
@@ -47,39 +47,55 @@ export default defineComponent({
 
   data() {
     return {
-      isLogging: false,
-      isAllreadyLogging: false,
+      isLogin: false,
+      isAllreadyLogin: false,
       coockiesMessageShow: true,
     };
   },
 
+  computed: {
+    getItemFromLocalStorage(): boolean {
+      return (
+        localStorage.getItem('username') !== null &&
+        localStorage.getItem('password') !== null
+      );
+    },
+  },
+
   created() {
-    if (
-      localStorage.getItem('name') !== null &&
-      localStorage.getItem('password') !== null
-    ) {
-      this.isAllreadyLogging = true;
-      this.logging();
-    }
+    this.checkLogin();
   },
 
   methods: {
     acceptCoockies() {
       this.coockiesMessageShow = this.coockiesMessageShow ? false : true;
     },
-    logging(payload: Record<string, string>): void {
-      if (this.isAllreadyLogging) {
-        this.isLogging = this.isLogging ? false : true;
+    login(payload: Record<string, string>): void {
+      if (this.isAllreadyLogin) {
+        this.isLogin = this.isLogin ? false : true;
       } else {
-        localStorage.setItem('name', payload.name);
-        localStorage.setItem('password', payload.password);
-        this.isLogging = this.isLogging ? false : true;
+        this.setItemToLocalStorage(payload);
+        this.isLogin = this.isLogin ? false : true;
+      }
+    },
+    checkLogin() {
+      if (this.getItemFromLocalStorage) {
+        this.isAllreadyLogin = true;
+        this.isLogin = this.isLogin ? false : true;
       }
     },
     logout() {
-      this.isLogging = this.isLogging ? false : true;
-      this.isAllreadyLogging = false;
-      localStorage.removeItem('name');
+      this.isLogin = this.isLogin ? false : true;
+      this.isAllreadyLogin = false;
+      this.removeItemFromLocalStorage();
+    },
+    //
+    setItemToLocalStorage(payload: Record<string, string>) {
+      localStorage.setItem('username', payload.name);
+      localStorage.setItem('password', payload.password);
+    },
+    removeItemFromLocalStorage() {
+      localStorage.removeItem('username');
       localStorage.removeItem('password');
     },
   },

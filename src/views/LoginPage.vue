@@ -4,7 +4,7 @@
       class="login"
       action="#"
       @submit.prevent="
-        this.$emit('logging', { name: this.name, password: this.password })
+        this.$emit('login', { name: this.name, password: this.password })
       "
     >
       <label class="login__username" for="username"
@@ -23,11 +23,15 @@
         <span
           v-if="!vissiblePassword"
           class="vision-button"
-          @click.stop="showPassword"
+          @click.stop="showPassword(this.$refs.password)"
         >
           <img src="@/assets/Vector.svg" alt="" />
         </span>
-        <span v-else class="vision-button" @click.stop="showPassword">
+        <span
+          v-else
+          class="vision-button"
+          @click.stop="showPassword(this.$refs.password)"
+        >
           <img src="@/assets/eye-invisible.svg" alt="" />
         </span>
       </label>
@@ -48,13 +52,18 @@ export default defineComponent({
       vissiblePassword: false,
     };
   },
+
+  $refs: {
+    password: HTMLInputElement,
+  },
+
   methods: {
-    showPassword(): void {
+    showPassword(ref: HTMLInputElement): void {
       this.vissiblePassword = this.vissiblePassword ? false : true;
       if (this.vissiblePassword) {
-        this.$refs.password.type = 'text';
+        ref.type = 'text';
       } else {
-        this.$refs.password.type = 'password';
+        ref.type = 'password';
       }
     },
   },
