@@ -87,12 +87,12 @@ export default defineComponent({
       this.removeItemFromLocalStorage();
     },
 
-    setItemToLocalStorage(payload: Record<string, string>) {
+    setItemToLocalStorage(payload: Record<string, string>): void {
       localStorage.setItem('username', payload.name);
       localStorage.setItem('password', payload.password);
     },
 
-    removeItemFromLocalStorage() {
+    removeItemFromLocalStorage(): void {
       localStorage.removeItem('username');
       localStorage.removeItem('password');
     },
