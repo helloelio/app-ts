@@ -107,10 +107,11 @@ export default defineComponent({
   box-sizing: border-box;
 }
 #app {
+  background-color: #184968;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: #fff;
 }
 .container {
   padding-top: 96px;

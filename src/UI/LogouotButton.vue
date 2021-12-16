@@ -28,8 +28,8 @@
     width: 7.5rem;
     font-size: 1rem;
     font-weight: bold;
-    background-color: #39a8ef;
-    border: 2px solid #39a8ef;
+    background-color: #184968;
+    border: 2px solid #184968;
     border-radius: 4px;
     padding: 5px 10px;
     color: #fff;
@@ -37,12 +37,12 @@
     cursor: pointer;
   }
   &-btn:hover > svg path {
-    fill: #39a8ef;
+    fill: #184968;
     transition: 0.3s ease;
   }
   &-btn:hover {
     background-color: #fff;
-    color: #39a8ef;
+    color: #184968;
   }
 }
 </style>

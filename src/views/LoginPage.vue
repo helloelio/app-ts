@@ -68,6 +68,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .login-block {
+  background-color: #184968;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,16 +77,6 @@ export default defineComponent({
   height: 100vh;
 }
 .login {
-  background-color: #39a8ef;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 1.3rem;
-  max-width: 50%;
-  margin: 0 auto;
-  border: 1px solid black;
-  padding: 30px;
   &__username {
     color: #fff;
     font-weight: bold;
