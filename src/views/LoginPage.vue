@@ -89,7 +89,7 @@ export default defineComponent({
   &__username input {
     font-size: 1rem;
     border: none;
-    padding: 5px 0;
+    padding: 5px 5px;
     box-shadow: 0px 0px 10px black;
   }
   &__password {
@@ -105,7 +105,7 @@ export default defineComponent({
   &__password input {
     border: none;
     font-size: 1rem;
-    padding: 5px 0;
+    padding: 5px 5px;
     box-shadow: 0px 0px 10px black;
   }
   &__submit {
