@@ -51,7 +51,7 @@ export default defineComponent({
       color: #184968;
     }
     &.router-link-exact-active:hover {
-      border: 2px solid #39a8ef;
+      border: 2px solid #184968;
     }
   }
 }

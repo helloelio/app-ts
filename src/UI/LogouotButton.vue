@@ -37,7 +37,7 @@
     cursor: pointer;
   }
   &-btn:hover > svg path {
-    fill: #184968;
+    fill: rgb(158, 0, 0);
     transition: 0.3s ease;
   }
   &-btn:hover {

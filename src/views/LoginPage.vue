@@ -25,14 +25,14 @@
           class="vision-button"
           @click.stop="showPassword(this.$refs.password)"
         >
-          <img src="@/assets/Vector.svg" alt="" />
+          <img src="@/assets/eye-open.svg" alt="" />
         </span>
         <span
           v-else
           class="vision-button"
           @click.stop="showPassword(this.$refs.password)"
         >
-          <img src="@/assets/eye-invisible.svg" alt="" />
+          <img src="@/assets/eye-closed.svg" alt="" />
         </span>
       </label>
       <input class="login__submit" type="submit" value="Login" />
@@ -88,8 +88,9 @@ export default defineComponent({
   }
   &__username input {
     font-size: 1rem;
+    border: none;
     padding: 5px 0;
-    box-shadow: 0px 0px 5px black;
+    box-shadow: 0px 0px 10px black;
   }
   &__password {
     color: #fff;
@@ -102,9 +103,10 @@ export default defineComponent({
     width: 12rem;
   }
   &__password input {
+    border: none;
     font-size: 1rem;
     padding: 5px 0;
-    box-shadow: 0px 0px 5px black;
+    box-shadow: 0px 0px 10px black;
   }
   &__submit {
     background-color: #39a8ef;
@@ -131,6 +133,6 @@ export default defineComponent({
   background: none;
   border: none;
   right: 5px;
-  top: 50%;
+  top: 45%;
 }
 </style>
