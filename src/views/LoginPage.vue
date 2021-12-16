@@ -53,10 +53,6 @@ export default defineComponent({
     };
   },
 
-  $refs: {
-    password: HTMLInputElement,
-  },
-
   methods: {
     showPassword(ref: HTMLInputElement): void {
       this.vissiblePassword = this.vissiblePassword ? false : true;
