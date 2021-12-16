@@ -134,5 +134,6 @@ export default defineComponent({
   border: none;
   right: 5px;
   top: 45%;
+  cursor: pointer;
 }
 </style>
