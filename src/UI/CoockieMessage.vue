@@ -34,7 +34,7 @@ export default {
   background-color: $dark-bg;
   color: $primary-color;
   box-shadow: 0px 0px 10px 0px black;
-  width: 65%;
+  width: 30%;
   position: fixed;
   display: grid;
   justify-content: center;
@@ -73,6 +73,7 @@ export default {
 @media screen and (max-width: 600px) {
   .coockie-message {
     font-size: 0.6rem;
+    width: 90%;
     &__button {
       padding: 5px;
       font-size: inherit;
