@@ -111,6 +111,7 @@ export default defineComponent({
   font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 #app {
+  height: 100vh;
   background-color: rgb(32, 32, 35);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
