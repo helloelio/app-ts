@@ -28,9 +28,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/style/variables.scss';
+
 .coockie-message {
-  background-color: #fff;
-  color: black;
+  background-color: $dark-bg;
+  color: $primary-color;
   box-shadow: 0px 0px 10px 0px black;
   width: 65%;
   position: fixed;
@@ -42,7 +44,7 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   border: 1px solid black;
-  border-radius: 8px;
+  border-radius: 0.375rem;
   margin-bottom: 60px;
   &__title {
     margin-bottom: 10px;
@@ -51,20 +53,20 @@ export default {
     justify-self: end;
   }
   &__button {
-    background-color: #39a8ef;
+    background-color: $light-bg;
     font-size: 1.1rem;
     color: white;
     font-weight: bold;
     border: 2px solid #fff;
     padding: 15px 45px;
-    border-radius: 8px;
+    border-radius: 0.375rem;
     cursor: pointer;
     transition: all 0.3s;
   }
   &__button:hover {
     background-color: #fff;
-    color: #39a8ef;
-    border: 2px solid #39a8ef;
+    color: $dark-bg;
+    border: 2px solid $light-bg;
   }
 }
 </style>

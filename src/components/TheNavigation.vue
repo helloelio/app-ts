@@ -23,35 +23,34 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 #nav {
-  background-color: rgba(57, 169, 239, 0.9);
+  background-color: #202023d2;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: fixed;
   left: 0;
   right: 0;
-  align-items: center;
-  padding: 30px;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 15px;
   border-bottom: 2px solid #000;
   a {
-    background-color: #184968;
     color: #fff;
     font-size: 1.2rem;
     font-weight: bold;
-    border-radius: 4px;
     padding: 5px 10px;
-    border: 2px solid #184968;
     text-decoration: none;
     margin-right: 10px;
     transition: all 0.2s ease-in-out;
     &:hover {
-      border: 2px solid #fff;
+      text-shadow: 0px 0px 5px;
     }
     &.router-link-exact-active {
-      background-color: #fff;
-      color: #184968;
+      border-bottom: 2px solid #fff;
     }
     &.router-link-exact-active:hover {
-      border: 2px solid #184968;
+      border-bottom: 2px solid #fff;
+      text-shadow: none;
     }
   }
 }

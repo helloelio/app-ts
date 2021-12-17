@@ -2,7 +2,6 @@
   <div class="nav__logout">
     <button @click="this.$emit('logout')" class="nav__logout-btn">
       <img src="@/assets/images/logout.svg" alt="" />
-      Logout
     </button>
   </div>
 </template>
@@ -14,20 +13,18 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 7.5rem;
     font-size: 1rem;
     font-weight: bold;
-    background-color: #184968;
-    border: 2px solid #184968;
-    border-radius: 4px;
+    background-color: #bd0000;
+    border-radius: 0.375rem;
+    border: none;
     padding: 5px 10px;
     color: #fff;
     transition: 0.3s ease;
     cursor: pointer;
   }
   &-btn:hover {
-    background-color: #fff;
-    color: #184968;
+    box-shadow: 0px 0px 10px #bd0000;
   }
 }
 </style>

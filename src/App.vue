@@ -107,13 +107,15 @@ export default defineComponent({
   box-sizing: border-box;
 }
 #app {
-  background-color: #184968;
+  background-color: rgb(32, 32, 35);
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
 }
 .container {
+  max-width: 60ch;
   padding-top: 96px;
+  margin: 0 auto;
 }
 </style>
