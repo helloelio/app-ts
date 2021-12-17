@@ -1,22 +1,40 @@
 <template>
   <div id="nav">
     <div class="nav__items">
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
-      <router-link to="/works">Works</router-link>
+      <router-link to="/"
+        ><span class="hello-emoji">👋</span> Helloelio</router-link
+      >
+      <div class="nav__items nav__items-additionaly">
+        <router-link to="/works">Works</router-link>
+        <a href="https://github.com/helloelio"
+          ><img
+            src="@/assets/images/github.svg"
+            target="_blank"
+            alt="github-logo"
+          />
+          Github</a
+        >
+      </div>
     </div>
-    <LogoutButton @logout="this.$emit('logout')" />
+    <div style="display: flex">
+      <div class="nav__items-burger">
+        <HamburgerMenu />
+      </div>
+      <LogoutButton @logout="this.$emit('logout')" />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import LogoutButton from '@/UI/LogouotButton.vue';
+import HamburgerMenu from '@/components/navigation/HamburgerMenu.vue';
 
 export default defineComponent({
   name: 'TheNavigation',
   components: {
     LogoutButton,
+    HamburgerMenu,
   },
 });
 </script>
@@ -32,9 +50,17 @@ export default defineComponent({
   right: 0;
   max-width: 768px;
   margin: 0 auto;
-  padding: 15px;
+  padding: 10px;
   border-bottom: 2px solid #000;
+  .nav__items {
+    display: flex;
+  }
+  .nav__items-burger {
+    display: none;
+  }
   a {
+    display: flex;
+    align-items: center;
     color: #fff;
     font-size: 1.2rem;
     font-weight: bold;
@@ -42,16 +68,54 @@ export default defineComponent({
     text-decoration: none;
     margin-right: 10px;
     transition: all 0.2s ease-in-out;
+    .hello-emoji {
+      transition: all 0.2s ease-in-out;
+      margin-right: 5px;
+    }
     &:hover {
-      text-shadow: 0px 0px 5px;
+      box-shadow: 0px 0px 5px white;
+    }
+    &:hover > span.hello-emoji {
+      animation: hello 1s;
+      // transform: rotate(-15deg);
     }
     &.router-link-exact-active {
       border-bottom: 2px solid #fff;
     }
     &.router-link-exact-active:hover {
       border-bottom: 2px solid #fff;
-      text-shadow: none;
+      box-shadow: none;
     }
+    img {
+      margin-right: 5px;
+    }
+  }
+}
+
+@keyframes hello {
+  0% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@media (max-width: 600px) {
+  #nav {
+    justify-content: space-between;
+    a {
+      font-size: 1rem;
+    }
+  }
+  .nav__items-additionaly {
+    display: none !important;
+  }
+  .nav__items-burger {
+    display: flex !important;
   }
 }
 </style>
