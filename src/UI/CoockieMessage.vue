@@ -69,4 +69,14 @@ export default {
     border: 2px solid $light-bg;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .coockie-message {
+    font-size: 0.6rem;
+    &__button {
+      padding: 5px;
+      font-size: inherit;
+    }
+  }
+}
 </style>
