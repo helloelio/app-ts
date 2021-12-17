@@ -117,7 +117,7 @@ export default defineComponent({
   color: #fff;
 }
 .container {
-  max-width: 90ch;
+  max-width: 100ch;
   padding-top: 96px;
   margin: 0 auto;
 }
