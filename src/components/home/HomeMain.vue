@@ -7,7 +7,7 @@
       the sites, that's why I really love css and js for the interactivity amd
       functionality ⚙️ of these sites.
     </p>
-    <a href="https://github.com/helloelio">My porfolio</a>
+    <router-link to="/works">My porfolio</router-link>
   </div>
 </template>
 
