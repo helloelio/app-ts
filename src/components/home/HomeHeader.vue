@@ -1,12 +1,6 @@
 <template>
   <div class="header">
-    <img
-      src="https://camo.githubusercontent.com/c60efeb93a6c0d024651f3f27a6cebb51021e792b3b10417a4813e6ff4a3053a/68747470733a2f2f692e70696e696d672e636f6d2f6f726967696e616c732f33312f38612f63652f33313861636534323662323237356133366237663330386266663564303066312e676966"
-      alt="plant"
-      height="200"
-      width="200"
-      style="margin-bottom: 10px"
-    />
+    <Plant />
     <div class="title">Hello, I'm fronted developer</div>
     <div class="subtitle">
       <div class="about">
@@ -19,6 +13,19 @@
     </div>
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+import Plant from '@/UI/Plant.vue';
+
+export default defineComponent({
+  name: 'HomeHeader',
+  components: {
+    Plant,
+  },
+});
+</script>
+
 <style lang="scss" scoped>
 .header {
   align-self: center;
@@ -35,7 +42,7 @@
     padding: 10px 20px;
     border-radius: 0.375rem;
     font-size: 1rem;
-    margin-bottom: 15px;
+    margin: 30px 0;
   }
   .subtitle {
     display: flex;

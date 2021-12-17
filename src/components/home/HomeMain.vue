@@ -1,6 +1,6 @@
 <template>
   <div class="home-main">
-    <h2>About <span class="blinked">_</span></h2>
+    <h2 class="title">About <span class="blinked">_</span></h2>
     <p>
       Hello again, 👋 my name is Gleb Medvedev, I'm studyinh the frontend, doing
       my own small projects 🗂️. I like the viesual ✨ 𝚙𝚊𝚛𝚝 𝚘𝚏 𝚝𝚑𝚎 𝚜𝚒𝚝𝚎𝚜, part of
@@ -12,6 +12,9 @@
 </template>
 
 <style lang="scss" scoped>
+.title {
+  font-size: 2rem;
+}
 .home-main {
   margin-bottom: 10px;
   a {
