@@ -25,21 +25,21 @@ export default defineComponent({
           title: 'eCommerce Component',
           subtitle:
             'e-Commerce-component, a concept of a store and a cart of products (also for mobile)',
-          img: require('@/assets/images/WorkOne.png'),
+          img: require('@/assets/images/WorkThree.png'),
           link: 'https://e-commerce-component.vercel.app/',
         },
         {
           id: 2,
           title: 'Tip Calculator',
           subtitle: 'Build with Vue 3, Vite, Tailwind CSS.',
-          img: require('@/assets/images/WorkTwo.png'),
+          img: require('@/assets/images/WorkOne.png'),
           link: 'https://tip-calculator-roan.vercel.app/',
         },
         {
           id: 3,
           title: 'Weather App',
           subtitle: 'Vue weather app with vuex, weatherAPI.',
-          img: require('@/assets/images/WorkThree.png'),
+          img: require('@/assets/images/WorkTwo.png'),
 
           link: 'https://vue-weather-app-seven.vercel.app/#/',
         },
