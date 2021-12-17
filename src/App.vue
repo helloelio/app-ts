@@ -18,7 +18,7 @@
 import { defineComponent } from 'vue';
 import LoginPage from '@/views/LoginPage.vue';
 import CoockieMessage from '@/UI/CoockieMessage.vue';
-import TheNavigation from '@/components/TheNavigation.vue';
+import TheNavigation from '@/components/navigation/TheNavigation.vue';
 
 export default defineComponent({
   name: 'App',
