@@ -19,7 +19,6 @@
     </div>
   </div>
 </template>
-
 <style lang="scss" scoped>
 .header {
   align-self: center;
@@ -31,10 +30,11 @@
     height: 25ch;
   }
   .title {
+    font-family: 'Press Start 2P', cursive;
     background-color: rgba(255, 255, 255, 0.16);
     padding: 10px 20px;
     border-radius: 0.375rem;
-    font-size: 1.8rem;
+    font-size: 1rem;
     margin-bottom: 15px;
   }
   .subtitle {

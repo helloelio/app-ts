@@ -1,8 +1,8 @@
 <template>
   <div id="nav">
     <div class="nav__items">
-      <router-link to="/"
-        ><span class="hello-emoji">👋</span> Helloelio</router-link
+      <router-link class="logo-text" to="/"
+        ><span class="hello-emoji">👋</span>helloelio</router-link
       >
       <div class="nav__items nav__items-additionaly">
         <router-link to="/works">Works</router-link>
@@ -51,9 +51,13 @@ export default defineComponent({
   max-width: 768px;
   margin: 0 auto;
   padding: 10px;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
   .nav__items {
     display: flex;
+    .logo-text {
+      font-family: 'Press Start 2P', cursive;
+      font-weight: 400;
+    }
   }
   .nav__items-burger {
     display: none;
@@ -77,7 +81,6 @@ export default defineComponent({
     }
     &:hover > span.hello-emoji {
       animation: hello 1s;
-      // transform: rotate(-15deg);
     }
     &.router-link-exact-active {
       border-bottom: 2px solid #fff;
