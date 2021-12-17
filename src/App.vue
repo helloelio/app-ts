@@ -101,10 +101,13 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 #app {
   background-color: rgb(32, 32, 35);
@@ -114,8 +117,14 @@ export default defineComponent({
   color: #fff;
 }
 .container {
-  max-width: 60ch;
+  max-width: 90ch;
   padding-top: 96px;
   margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .container {
+    max-width: 45ch;
+  }
 }
 </style>
