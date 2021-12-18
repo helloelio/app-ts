@@ -128,6 +128,28 @@ a {
   text-decoration: none;
 }
 
+.title {
+  font-size: 2rem;
+  margin: 30px 0;
+}
+
+.blinked {
+  color: rgba(255, 255, 255, 0.7);
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @media (max-width: 600px) {
   .container {
     max-width: 45ch;
