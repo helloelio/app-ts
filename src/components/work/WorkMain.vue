@@ -48,7 +48,7 @@ export default defineComponent({
             'Test task for a "future group" for a junior frontend developer. ',
           img: require('@/assets/images/WorkFour.png'),
 
-          link: 'href',
+          link: 'https://react-google-books-api-ghvdmfaa8-helloelio.vercel.app/',
         },
       ],
     };
