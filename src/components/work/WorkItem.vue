@@ -1,5 +1,5 @@
 <template>
-  <a :href="work.link" v-for="work in this.works" :key="work.id">
+  <a :href="work.link" v-for="work in works" :key="work.id">
     <div class="works__item">
       <div class="works__image">
         <img :src="work.img" alt="" />
@@ -16,6 +16,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+
 export default defineComponent({
   name: 'WorkItem',
   props: {
