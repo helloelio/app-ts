@@ -2,6 +2,7 @@
   <div class="home">
     <HomeHeader />
     <HomeMain />
+    <SocialsMain />
   </div>
 </template>
 
@@ -9,12 +10,14 @@
 import { defineComponent } from 'vue';
 import HomeHeader from '@/components/home/HomeHeader.vue';
 import HomeMain from '@/components/home/HomeMain.vue';
+import SocialsMain from '@/components/socials/SocialsMain.vue';
 
 export default defineComponent({
   name: 'Home',
   components: {
     HomeHeader,
     HomeMain,
+    SocialsMain,
   },
 
   mounted() {
