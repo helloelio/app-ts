@@ -28,11 +28,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
 .works__item {
   .works__image {
     display: flex;

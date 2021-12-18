@@ -116,10 +116,15 @@ export default defineComponent({
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
 }
+
 .container {
   max-width: 100ch;
-  padding-top: 96px;
   margin: 0 auto;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
 }
 
 @media (max-width: 600px) {
