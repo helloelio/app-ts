@@ -38,8 +38,8 @@ a {
   border-radius: 20px;
   padding: 10px;
   border: 1px solid white;
+  transition: all 0.3s ease;
 }
-
 .socials__item:hover {
   border: 1px solid white;
   box-shadow: 0 0 5px 0 black;
