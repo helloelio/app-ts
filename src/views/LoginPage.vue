@@ -1,5 +1,5 @@
 <template>
-  <WrongFields v-if="validate" />
+  <WrongFields :validate="validate" />
   <div class="login-block">
     <LoginFrom @login="login" />
   </div>
@@ -27,6 +27,9 @@ export default defineComponent({
     login(payload: Record<string, string>): void {
       if (payload.name === '' || payload.password === '') {
         this.validate = true;
+        setTimeout(() => {
+          this.validate = false;
+        }, 3000);
       } else {
         this.$emit('login', { name: payload.name, password: payload.password });
       }
