@@ -16,6 +16,10 @@ export default defineComponent({
     HomeHeader,
     HomeMain,
   },
+
+  mounted() {
+    document.title = 'helloelio - home';
+  },
 });
 </script>
 

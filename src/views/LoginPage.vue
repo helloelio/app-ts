@@ -24,6 +24,10 @@ export default defineComponent({
     };
   },
 
+  mounted() {
+    document.title = 'Login';
+  },
+
   methods: {
     login(payload: Login): void {
       if (payload.name === '' || payload.password === '') {
