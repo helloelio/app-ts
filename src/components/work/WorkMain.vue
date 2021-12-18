@@ -1,5 +1,4 @@
 <template>
-  <Plant />
   <h2 class="title">Works <span class="blinked">_</span></h2>
   <div class="works">
     <WorkItem :works="works" />
@@ -9,13 +8,11 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import WorkItem from '@/components/work/WorkItem.vue';
-import Plant from '@/UI/Plant.vue';
 
 export default defineComponent({
   name: 'WorkMain',
   components: {
     WorkItem,
-    Plant,
   },
   data() {
     return {

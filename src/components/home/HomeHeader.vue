@@ -1,6 +1,5 @@
 <template>
   <div class="header">
-    <Plant />
     <div class="title">Hello, I'm fronted developer</div>
     <div class="subtitle">
       <div class="about">
@@ -16,13 +15,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Plant from '@/UI/Plant.vue';
 
 export default defineComponent({
   name: 'HomeHeader',
-  components: {
-    Plant,
-  },
+  components: {},
 });
 </script>
 

@@ -6,6 +6,9 @@
       <LogoutButton @logout="$emit('logout')" />
     </div>
   </div>
+  <div class="plant">
+    <Plant />
+  </div>
 </template>
 
 <script lang="ts">
@@ -13,6 +16,7 @@ import { defineComponent } from 'vue';
 import LogoutButton from '@/UI/LogouotButton.vue';
 import HamburgerMenu from '@/components/navigation/hamburger/HamburgerMenu.vue';
 import MainMenu from '@/components/navigation/main/MainMenu.vue';
+import Plant from '@/UI/Plant.vue';
 
 export default defineComponent({
   name: 'TheNavigation',
@@ -20,6 +24,7 @@ export default defineComponent({
     LogoutButton,
     HamburgerMenu,
     MainMenu,
+    Plant,
   },
 });
 </script>
@@ -38,7 +43,11 @@ export default defineComponent({
   padding: 10px;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
-
+.plant {
+  display: flex;
+  justify-content: center;
+  padding-top: 70px;
+}
 @keyframes hello {
   0% {
     transform: rotate(-15deg);
