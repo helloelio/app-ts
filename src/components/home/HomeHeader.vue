@@ -27,6 +27,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/style/variables.scss';
 .header {
   align-self: center;
   text-align: center;
@@ -40,7 +41,7 @@ export default defineComponent({
     font-family: 'Press Start 2P', cursive;
     background-color: rgba(255, 255, 255, 0.16);
     padding: 10px 20px;
-    border-radius: 0.375rem;
+    border-radius: $main-radius;
     font-size: 1rem;
     margin: 30px 0;
   }

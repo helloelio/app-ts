@@ -61,7 +61,7 @@ button:hover {
   background: #ebabcd;
   font-size: 2rem;
   border: 2px solid $primary-color;
-  border-radius: 0.375rem;
+  border-radius: $main-radius;
   display: flex;
   flex-direction: column;
   position: absolute;

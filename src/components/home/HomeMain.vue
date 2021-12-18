@@ -12,6 +12,8 @@
 </template>
 
 <style lang="scss" scoped>
+@import '@/assets/style/variables.scss';
+
 .title {
   font-size: 2rem;
 }
@@ -22,16 +24,16 @@
     max-width: 20ch;
     margin: 15px auto;
     font-size: 1.5rem;
-    color: #fff;
+    color: $primary-color;
     text-decoration: none;
-    background-color: #ebabcd;
-    border-radius: 0.375rem;
+    background-color: $additionaly-bg;
+    border-radius: $main-radius;
     padding: 5px;
     text-align: center;
     transition: all 0.2s ease;
   }
   a:hover {
-    background-color: #ebabcddc;
+    background-color: $additionaly-bg;
   }
 }
 .blinked {
