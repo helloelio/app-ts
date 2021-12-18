@@ -58,33 +58,12 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import '@/assets/style/variables.scss';
-.title {
-  font-size: 2rem;
-  margin: 30px 0;
-}
 .works {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   img {
     align-self: center;
-  }
-}
-
-.blinked {
-  color: rgba(255, 255, 255, 0.7);
-  animation: blink 2s infinite;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }
 
