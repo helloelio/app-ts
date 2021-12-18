@@ -34,9 +34,9 @@ export default defineComponent({
         this.validate = true;
         setTimeout(() => {
           this.validate = false;
-        }, 3000);
+        }, 2000);
       } else {
-        this.$emit('login', { name: payload.name, password: payload.password });
+        this.$emit('login', payload);
       }
     },
   },
