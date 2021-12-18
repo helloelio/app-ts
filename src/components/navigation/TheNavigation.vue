@@ -20,7 +20,7 @@
       <div class="nav__items-burger">
         <HamburgerMenu />
       </div>
-      <LogoutButton @logout="this.$emit('logout')" />
+      <LogoutButton @logout="$emit('logout')" />
     </div>
   </div>
 </template>

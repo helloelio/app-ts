@@ -11,20 +11,19 @@
       </p>
     </div>
     <div class="coockie-message__block-button">
-      <button
-        @click="this.$emit('acceptCoockies')"
-        class="coockie-message__button"
-      >
+      <button @click="$emit('acceptCoockies')" class="coockie-message__button">
         Accept
       </button>
     </div>
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@vue/runtime-core';
+
+export default defineComponent({
   name: 'CoockieMessage',
-};
+});
 </script>
 
 <style lang="scss" scoped>

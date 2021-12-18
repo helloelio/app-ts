@@ -1,10 +1,17 @@
 <template>
   <div class="nav__logout">
-    <button @click="this.$emit('logout')" class="nav__logout-btn">
+    <button @click="$emit('logout')" class="nav__logout-btn">
       <img src="@/assets/images/logout.svg" alt="" />
     </button>
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+export default defineComponent({
+  name: 'LogoutButton',
+});
+</script>
 
 <style lang="scss" scoped>
 .nav__logout {

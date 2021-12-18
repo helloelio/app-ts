@@ -19,6 +19,7 @@ export default defineComponent({
   },
   data() {
     return {
+      obj: { name: 'asd', age: 23 },
       works: [
         {
           id: 1,
