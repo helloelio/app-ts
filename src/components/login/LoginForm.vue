@@ -79,10 +79,11 @@ export default defineComponent({
     @include input-block;
     .vision-button {
       position: absolute;
+      height: 24px;
       background: none;
       border: none;
       right: 5px;
-      top: 45%;
+      top: 50%;
       cursor: pointer;
     }
   }
