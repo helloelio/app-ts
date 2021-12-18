@@ -3,7 +3,7 @@
     class="login"
     action="#"
     @submit.prevent="
-      $emit('login', { name: this.name, password: this?.password })
+      $emit('login', { name: this.name, password: this.password })
     "
   >
     <label class="login__username" for="username"

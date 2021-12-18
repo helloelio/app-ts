@@ -19,6 +19,7 @@ import { defineComponent } from 'vue';
 import LoginPage from '@/views/LoginPage.vue';
 import CoockieMessage from '@/UI/CoockieMessage.vue';
 import TheNavigation from '@/components/navigation/TheNavigation.vue';
+import Login from './interfaces/Login';
 
 export default defineComponent({
   name: 'App',
@@ -65,7 +66,7 @@ export default defineComponent({
       }
     },
 
-    login(payload: Record<string, string>): void {
+    login(payload: Login): void {
       if (this.isAllreadyLogin) {
         this.isLogin = this.isLogin ? false : true;
       } else {
@@ -87,7 +88,7 @@ export default defineComponent({
       this.removeItemFromLocalStorage();
     },
 
-    setItemToLocalStorage(payload: Record<string, string>): void {
+    setItemToLocalStorage(payload: Login): void {
       localStorage.setItem('username', payload.name);
       localStorage.setItem('password', payload.password);
     },
