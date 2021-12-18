@@ -13,6 +13,10 @@ export default defineComponent({
   components: {
     WorkMain,
   },
+
+  mounted() {
+    document.title = 'helloelio - works';
+  },
 });
 </script>
 
