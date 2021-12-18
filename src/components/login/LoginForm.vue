@@ -48,6 +48,7 @@ export default defineComponent({
       vissiblePassword: false,
     };
   },
+
   methods: {
     showPassword(ref: HTMLInputElement): void {
       this.vissiblePassword = this.vissiblePassword ? false : true;
@@ -72,6 +73,7 @@ export default defineComponent({
   &__username input,
   &__password input {
     @include input;
+    padding-right: 35px;
   }
   &__password {
     @include input-block;
