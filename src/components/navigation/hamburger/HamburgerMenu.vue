@@ -35,10 +35,9 @@
 import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'HamburgerMenu',
-  data() {
-    return {
-      toggleBurger: false,
-    };
+  setup() {
+    let toggleBurger = false;
+    return { toggleBurger };
   },
 });
 </script>
