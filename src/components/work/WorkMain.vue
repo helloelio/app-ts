@@ -15,8 +15,8 @@ export default defineComponent({
     WorkItem,
   },
 
-  data: () => ({
-    works: [
+  setup() {
+    const works = [
       {
         id: 1,
         title: 'eCommerce Component',
@@ -48,8 +48,10 @@ export default defineComponent({
         img: require('@/assets/images/WorkFour.png'),
         link: 'https://react-google-books-api-ghvdmfaa8-helloelio.vercel.app/',
       },
-    ],
-  }),
+    ];
+
+    return { works };
+  },
 });
 </script>
 
