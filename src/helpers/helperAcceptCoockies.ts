@@ -1,4 +1,4 @@
-export default function hellperAcceptCoockies() {
+export default function hellperAcceptCoockies(): boolean {
   localStorage.setItem('coockie', 'true');
   return false;
 }
