@@ -41,12 +41,12 @@ export default defineComponent({
       context.emit('login', { name: name, password: pass });
     }
 
-    function showPassword(eye: HTMLInputElement): void {
+    function showPassword(password: HTMLInputElement): void {
       vissiblePassword.value = !vissiblePassword.value;
       if (vissiblePassword.value) {
-        eye.type = 'text';
+        password.type = 'text';
       } else {
-        eye.type = 'password';
+        password.type = 'password';
       }
     }
 
