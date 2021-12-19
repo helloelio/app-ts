@@ -38,7 +38,7 @@ export default defineComponent({
     let vissiblePassword = ref(false);
 
     function onSubmit(): void {
-      context.emit('login', { name: name, password: pass });
+      context.emit('login', { name: name.value, password: pass.value });
     }
 
     function showPassword(password: HTMLInputElement): void {
