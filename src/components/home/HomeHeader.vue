@@ -13,15 +13,6 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: 'HomeHeader',
-  components: {},
-});
-</script>
-
 <style lang="scss" scoped>
 @import '@/assets/style/variables.scss';
 .header {
