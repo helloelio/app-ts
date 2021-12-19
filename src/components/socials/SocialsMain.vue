@@ -8,6 +8,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import SocialsItems from '@/components/socials/SocialsItem.vue';
+import SocialInterface from '@/interfaces/SocialsInterface';
 
 export default defineComponent({
   name: 'SocialsMain',
@@ -16,7 +17,7 @@ export default defineComponent({
   },
 
   setup() {
-    const socials = [
+    const socials: SocialInterface[] = [
       {
         id: 1,
         img: require('@/assets/images/instagram-social.svg'),
