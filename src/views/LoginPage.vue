@@ -10,6 +10,7 @@ import { defineComponent } from 'vue';
 import WrongFields from '@/UI/WrongFields.vue';
 import LoginFrom from '@/components/login/LoginForm.vue';
 import Login from '@/interfaces/Login';
+import { ref } from 'vue';
 
 export default defineComponent({
   name: 'LoginPage',
@@ -18,10 +19,9 @@ export default defineComponent({
     LoginFrom,
   },
 
-  data() {
-    return {
-      validate: false,
-    };
+  setup() {
+    let validate = ref(false);
+    return { validate };
   },
 
   mounted() {
