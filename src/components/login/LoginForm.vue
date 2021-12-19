@@ -1,23 +1,12 @@
 <template>
-  <form
-    class="login"
-    action="#"
-    @submit.prevent="
-      $emit('login', { name: this.name, password: this.password })
-    "
-  >
+  <form class="login" action="#" @submit.prevent="onSubmit">
     <label class="login__username" for="username"
       >Username
       <input v-model="name" type="text" name="username" />
     </label>
     <label class="login__password" for="password"
       >Password
-      <input
-        ref="password"
-        v-model="password"
-        type="password"
-        name="password"
-      />
+      <input ref="password" v-model="pass" type="password" name="password" />
       <span
         v-if="!vissiblePassword"
         class="vision-button"
@@ -38,26 +27,30 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { ref, defineComponent } from 'vue';
+
 export default defineComponent({
   name: 'LoginForm',
-  data() {
-    return {
-      name: '',
-      password: '',
-      vissiblePassword: false,
-    };
-  },
 
-  methods: {
-    showPassword(ref: HTMLInputElement): void {
-      this.vissiblePassword = this.vissiblePassword ? false : true;
-      if (this.vissiblePassword) {
-        ref.type = 'text';
+  setup(_, context) {
+    const name = ref('');
+    const pass = ref('');
+    let vissiblePassword = ref(false);
+
+    function onSubmit() {
+      context.emit('login', { name: name, password: pass });
+    }
+
+    function showPassword(eye: HTMLInputElement): void {
+      vissiblePassword.value = !vissiblePassword.value;
+      if (vissiblePassword.value) {
+        eye.type = 'text';
       } else {
-        ref.type = 'password';
+        eye.type = 'password';
       }
-    },
+    }
+
+    return { name, pass, vissiblePassword, showPassword, onSubmit };
   },
 });
 </script>
