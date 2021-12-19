@@ -35,7 +35,45 @@ export default defineComponent({
     let isAllreadyLogin = ref(false);
     let coockiesMessageShow = ref(true);
 
-    return { isLogin, isAllreadyLogin, coockiesMessageShow };
+    function acceptCoockies(): void {
+      coockiesMessageShow.value = hellperAcceptCoockies();
+    }
+
+    function login(payload: Login): void {
+      if (isAllreadyLogin.value) {
+        isLogin.value = isLogin.value ? false : true;
+      } else {
+        setItemToLocalStorage(payload);
+        isLogin.value = isLogin.value ? false : true;
+      }
+    }
+
+    function setItemToLocalStorage(payload: Login): void {
+      localStorage.setItem('username', payload.name);
+      localStorage.setItem('password', payload.password);
+    }
+
+    function removeItemFromLocalStorage(): void {
+      localStorage.removeItem('username');
+      localStorage.removeItem('password');
+    }
+
+    function logout(): void {
+      isLogin.value = false;
+      isAllreadyLogin.value = false;
+      removeItemFromLocalStorage();
+    }
+
+    return {
+      isLogin,
+      isAllreadyLogin,
+      coockiesMessageShow,
+      acceptCoockies,
+      setItemToLocalStorage,
+      removeItemFromLocalStorage,
+      login,
+      logout,
+    };
   },
 
   computed: {
@@ -56,46 +94,16 @@ export default defineComponent({
   },
 
   methods: {
-    acceptCoockies(): void {
-      this.coockiesMessageShow = hellperAcceptCoockies();
-    },
-
     checkCoockie(): void {
       if (this.getCoockieStatusFromLocalStorage) {
         this.coockiesMessageShow = false;
       }
     },
 
-    login(payload: Login): void {
-      if (this.isAllreadyLogin) {
-        this.isLogin = this.isLogin ? false : true;
-      } else {
-        this.setItemToLocalStorage(payload);
-        this.isLogin = this.isLogin ? false : true;
-      }
-    },
-
     checkLogin(): void {
       if (this.getItemFromLocalStorage) {
-        this.isAllreadyLogin = true;
-        this.isLogin = this.isLogin ? false : true;
+        this.isAllreadyLogin = this.isLogin = true;
       }
-    },
-
-    logout(): void {
-      this.isLogin = this.isLogin ? false : true;
-      this.isAllreadyLogin = false;
-      this.removeItemFromLocalStorage();
-    },
-
-    setItemToLocalStorage(payload: Login): void {
-      localStorage.setItem('username', payload.name);
-      localStorage.setItem('password', payload.password);
-    },
-
-    removeItemFromLocalStorage(): void {
-      localStorage.removeItem('username');
-      localStorage.removeItem('password');
     },
   },
 });
