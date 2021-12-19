@@ -8,6 +8,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import WorkItem from '@/components/work/WorkItem.vue';
+import WorksInterface from '@/interfaces/WorksInterface';
 
 export default defineComponent({
   name: 'WorkMain',
@@ -16,7 +17,7 @@ export default defineComponent({
   },
 
   setup() {
-    const works = [
+    const works: WorksInterface[] = [
       {
         id: 1,
         title: 'eCommerce Component',
