@@ -14,9 +14,11 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'SocilasItem',
-  setup(_, context) {
-    const socials = context.attrs.socials || [];
-    return { socials };
+  props: {
+    socials: {
+      type: Array,
+      default: () => [],
+    },
   },
 });
 </script>
