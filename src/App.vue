@@ -15,11 +15,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 import LoginPage from '@/views/LoginPage.vue';
 import CoockieMessage from '@/UI/CoockieMessage.vue';
 import TheNavigation from '@/components/navigation/TheNavigation.vue';
 import Login from './interfaces/Login';
+import hellperAcceptCoockies from '@/helpers/helperAcceptCoockies';
 
 export default defineComponent({
   name: 'App',
@@ -29,12 +30,12 @@ export default defineComponent({
     TheNavigation,
   },
 
-  data() {
-    return {
-      isLogin: false,
-      isAllreadyLogin: false,
-      coockiesMessageShow: true,
-    };
+  setup() {
+    let isLogin = ref(false);
+    let isAllreadyLogin = ref(false);
+    let coockiesMessageShow = ref(true);
+
+    return { isLogin, isAllreadyLogin, coockiesMessageShow };
   },
 
   computed: {
@@ -56,8 +57,7 @@ export default defineComponent({
 
   methods: {
     acceptCoockies(): void {
-      localStorage.setItem('coockie', 'true');
-      this.coockiesMessageShow = this.coockiesMessageShow ? false : true;
+      this.coockiesMessageShow = hellperAcceptCoockies();
     },
 
     checkCoockie(): void {
