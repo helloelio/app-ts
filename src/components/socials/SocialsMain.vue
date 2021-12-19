@@ -42,5 +42,6 @@ export default defineComponent({
 .socials {
   display: grid;
   row-gap: 20px;
+  padding-bottom: 30px;
 }
 </style>
