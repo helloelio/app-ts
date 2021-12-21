@@ -15,11 +15,12 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, ref } from 'vue';
+import { computed, defineComponent, reactive, toRefs } from 'vue';
 import LoginPage from '@/views/LoginPage.vue';
 import CoockieMessage from '@/UI/CoockieMessage.vue';
 import TheNavigation from '@/components/navigation/TheNavigation.vue';
-import Login from './interfaces/Login';
+import Login from './interfaces/LoginModel';
+import StateModel from '@/interfaces/StateModel';
 import hellperAcceptCoockies from '@/helpers/helperAcceptCoockies';
 
 export default defineComponent({
@@ -31,9 +32,13 @@ export default defineComponent({
   },
 
   setup() {
-    let isLogin = ref(false);
-    let isAllreadyLogin = ref(false);
-    let coockiesMessageShow = ref(true);
+    const state: StateModel = reactive({
+      isLogin: false,
+      isAllreadyLogin: false,
+      coockiesMessageShow: true,
+    });
+
+    let { isLogin, isAllreadyLogin, coockiesMessageShow } = toRefs(state);
 
     const getItemFromLocalStorage = computed((): boolean => {
       return (
@@ -91,9 +96,9 @@ export default defineComponent({
     }
 
     return {
-      isLogin,
-      isAllreadyLogin,
       coockiesMessageShow,
+      isAllreadyLogin,
+      isLogin,
       acceptCoockies,
       setItemToLocalStorage,
       removeItemFromLocalStorage,
