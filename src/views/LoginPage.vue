@@ -1,8 +1,10 @@
 <template>
   <WrongFields :validate="validate" />
-  <div class="login-block">
-    <LoginFrom @login="login" />
-  </div>
+  <main>
+    <section class="login-block">
+      <LoginFrom @login="login" />
+    </section>
+  </main>
 </template>
 
 <script lang="ts">
@@ -50,7 +52,6 @@ export default defineComponent({
 .login-block {
   background-color: $dark-bg;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;

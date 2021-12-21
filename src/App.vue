@@ -1,11 +1,18 @@
 <template>
-  <div v-if="!isLogin">
+  <div class="login" v-if="!isLogin">
+    <Plant />
     <LoginPage @login="login" />
   </div>
-  <div v-else>
+  <div class="main" v-else>
     <TheNavigation @logout="logout" />
     <div class="container">
+      <header class="plant">
+        <Plant />
+      </header>
       <router-view />
+      <footer>
+        <SocialsMain />
+      </footer>
     </div>
     <CoockieMessage
       @acceptCoockies="acceptCoockies"
@@ -18,6 +25,8 @@
 import { computed, defineComponent, reactive, toRefs } from 'vue';
 import LoginPage from '@/views/LoginPage.vue';
 import CoockieMessage from '@/UI/CoockieMessage.vue';
+import Plant from '@/UI/Plant.vue';
+import SocialsMain from '@/components/socials/SocialsMain.vue';
 import TheNavigation from '@/components/navigation/TheNavigation.vue';
 import LoginModel from './interfaces/LoginModel';
 import StateModel from '@/interfaces/StateModel';
@@ -26,6 +35,8 @@ import hellperAcceptCoockies from '@/helpers/helperAcceptCoockies';
 export default defineComponent({
   name: 'App',
   components: {
+    SocialsMain,
+    Plant,
     LoginPage,
     CoockieMessage,
     TheNavigation,
@@ -138,6 +149,18 @@ export default defineComponent({
 .container {
   max-width: 100ch;
   margin: 0 auto;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plant {
+  display: flex;
+  justify-content: center;
+  padding-top: 70px;
 }
 
 a {

@@ -6,9 +6,6 @@
       <LogoutButton @logout="$emit('logout')" />
     </div>
   </nav>
-  <section class="plant">
-    <Plant />
-  </section>
 </template>
 
 <script lang="ts">
@@ -16,7 +13,7 @@ import { defineComponent } from 'vue';
 import LogoutButton from '@/UI/LogouotButton.vue';
 import HamburgerMenu from '@/components/navigation/hamburger/HamburgerMenu.vue';
 import MainMenu from '@/components/navigation/main/MainMenu.vue';
-import Plant from '@/UI/Plant.vue';
+// import Plant from '@/UI/Plant.vue';
 
 export default defineComponent({
   name: 'TheNavigation',
@@ -24,7 +21,7 @@ export default defineComponent({
     LogoutButton,
     HamburgerMenu,
     MainMenu,
-    Plant,
+    // Plant,
   },
 });
 </script>

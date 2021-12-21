@@ -1,20 +1,19 @@
 <template>
-  <section class="works">
-    <WorkMain />
-  </section>
-  <SocialsMain />
+  <main>
+    <section class="works">
+      <WorkMain />
+    </section>
+  </main>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted } from 'vue';
 import WorkMain from '@/components/work/WorkMain.vue';
-import SocialsMain from '@/components/socials/SocialsMain.vue';
 
 export default defineComponent({
   name: 'Works',
   components: {
     WorkMain,
-    SocialsMain,
   },
 
   setup() {

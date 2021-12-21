@@ -1,23 +1,22 @@
 <template>
-  <section class="home">
-    <HomeHeader />
-    <HomeMain />
-    <SocialsMain />
-  </section>
+  <main>
+    <section class="home">
+      <HomeHeader />
+      <HomeMain />
+    </section>
+  </main>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted } from 'vue';
 import HomeHeader from '@/components/home/HomeHeader.vue';
 import HomeMain from '@/components/home/HomeMain.vue';
-import SocialsMain from '@/components/socials/SocialsMain.vue';
 
 export default defineComponent({
   name: 'Home',
   components: {
     HomeHeader,
     HomeMain,
-    SocialsMain,
   },
   setup() {
     onMounted(() => {
