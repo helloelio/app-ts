@@ -105,9 +105,7 @@ export default defineComponent({
     // methods
 
     return {
-      coockiesMessageShow,
-      isAllreadyLogin,
-      isLogin,
+      ...toRefs(state),
       acceptCoockies,
       setItemToLocalStorage,
       removeItemFromLocalStorage,
