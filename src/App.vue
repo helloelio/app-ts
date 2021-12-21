@@ -78,7 +78,7 @@ export default defineComponent({
       coockiesMessageShow.value = hellperAcceptCoockies();
     };
 
-    const login = (payload: Login): void => {
+    const login = (payload: LoginModel): void => {
       if (isAllreadyLogin.value) {
         isLogin.value = isLogin.value ? false : true;
       } else {
