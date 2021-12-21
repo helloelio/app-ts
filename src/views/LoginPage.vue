@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, onMounted } from 'vue';
 import WrongFields from '@/UI/WrongFields.vue';
 import LoginFrom from '@/components/login/LoginForm.vue';
 import LoginModel from '@/interfaces/LoginModel';
@@ -21,13 +21,14 @@ export default defineComponent({
 
   setup() {
     let validate = ref(false);
+
+    onMounted(() => {
+      document.title = 'helloelio - Login';
+    });
+
     return { validate };
   },
-
-  mounted() {
-    document.title = 'Login';
-  },
-
+  // TODO: Rewrite to setup function
   methods: {
     login(payload: LoginModel): void {
       if (payload.name === '' || payload.password === '') {

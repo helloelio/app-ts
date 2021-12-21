@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, onMounted } from 'vue';
 import WorkMain from '@/components/work/WorkMain.vue';
 import SocialsMain from '@/components/socials/SocialsMain.vue';
 
@@ -17,8 +17,10 @@ export default defineComponent({
     SocialsMain,
   },
 
-  mounted() {
-    document.title = 'helloelio - works';
+  setup() {
+    onMounted(() => {
+      document.title = 'helloelio - Works';
+    });
   },
 });
 </script>
