@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { computed, defineComponent, ref } from 'vue';
 import LoginPage from '@/views/LoginPage.vue';
 import CoockieMessage from '@/UI/CoockieMessage.vue';
 import TheNavigation from '@/components/navigation/TheNavigation.vue';
@@ -35,33 +35,59 @@ export default defineComponent({
     let isAllreadyLogin = ref(false);
     let coockiesMessageShow = ref(true);
 
+    const getItemFromLocalStorage = computed((): boolean => {
+      return (
+        localStorage.getItem('username') !== null &&
+        localStorage.getItem('password') !== null
+      );
+    });
+
+    const getCoockieStatusFromLocalStorage = computed((): boolean => {
+      return localStorage.getItem('coockie') === 'true';
+    });
+
+    checkLogin();
+    checkCoockie();
+
     function acceptCoockies(): void {
       coockiesMessageShow.value = hellperAcceptCoockies();
     }
 
-    function login(payload: Login): void {
+    const login = (payload: Login): void => {
       if (isAllreadyLogin.value) {
         isLogin.value = isLogin.value ? false : true;
       } else {
         setItemToLocalStorage(payload);
         isLogin.value = isLogin.value ? false : true;
       }
-    }
+    };
 
-    function setItemToLocalStorage(payload: Login): void {
+    const setItemToLocalStorage = (payload: Login): void => {
       localStorage.setItem('username', payload.name);
       localStorage.setItem('password', payload.password);
-    }
+    };
 
-    function removeItemFromLocalStorage(): void {
+    const removeItemFromLocalStorage = (): void => {
       localStorage.removeItem('username');
       localStorage.removeItem('password');
-    }
+    };
 
-    function logout(): void {
+    const logout = (): void => {
       isLogin.value = false;
       isAllreadyLogin.value = false;
       removeItemFromLocalStorage();
+    };
+
+    function checkCoockie(): void {
+      if (getCoockieStatusFromLocalStorage.value) {
+        coockiesMessageShow.value = false;
+      }
+    }
+
+    function checkLogin(): void {
+      if (getItemFromLocalStorage.value) {
+        isAllreadyLogin.value = isLogin.value = true;
+      }
     }
 
     return {
@@ -73,38 +99,9 @@ export default defineComponent({
       removeItemFromLocalStorage,
       login,
       logout,
+      checkLogin,
+      checkCoockie,
     };
-  },
-
-  computed: {
-    getItemFromLocalStorage(): boolean {
-      return (
-        localStorage.getItem('username') !== null &&
-        localStorage.getItem('password') !== null
-      );
-    },
-    getCoockieStatusFromLocalStorage(): boolean {
-      return localStorage.getItem('coockie') === 'true';
-    },
-  },
-
-  created() {
-    this.checkLogin();
-    this.checkCoockie();
-  },
-
-  methods: {
-    checkCoockie(): void {
-      if (this.getCoockieStatusFromLocalStorage) {
-        this.coockiesMessageShow = false;
-      }
-    },
-
-    checkLogin(): void {
-      if (this.getItemFromLocalStorage) {
-        this.isAllreadyLogin = this.isLogin = true;
-      }
-    },
   },
 });
 </script>
