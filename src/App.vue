@@ -19,7 +19,7 @@ import { computed, defineComponent, reactive, toRefs } from 'vue';
 import LoginPage from '@/views/LoginPage.vue';
 import CoockieMessage from '@/UI/CoockieMessage.vue';
 import TheNavigation from '@/components/navigation/TheNavigation.vue';
-import Login from './interfaces/LoginModel';
+import LoginModel from './interfaces/LoginModel';
 import StateModel from '@/interfaces/StateModel';
 import hellperAcceptCoockies from '@/helpers/helperAcceptCoockies';
 
@@ -32,14 +32,17 @@ export default defineComponent({
   },
 
   setup() {
+    // state
     const state: StateModel = reactive({
       isLogin: false,
       isAllreadyLogin: false,
       coockiesMessageShow: true,
     });
 
-    let { isLogin, isAllreadyLogin, coockiesMessageShow } = toRefs(state);
+    let { isLogin, isAllreadyLogin, coockiesMessageShow } = toRefs(state); // make state reactive
+    // state
 
+    // computed
     const getItemFromLocalStorage = computed((): boolean => {
       return (
         localStorage.getItem('username') !== null &&
@@ -51,12 +54,29 @@ export default defineComponent({
       return localStorage.getItem('coockie') === 'true';
     });
 
+    // computed
+
+    // lifeCycles
     checkLogin();
     checkCoockie();
 
-    function acceptCoockies(): void {
-      coockiesMessageShow.value = hellperAcceptCoockies();
+    function checkCoockie(): void {
+      if (getCoockieStatusFromLocalStorage.value) {
+        coockiesMessageShow.value = false;
+      }
     }
+
+    function checkLogin(): void {
+      if (getItemFromLocalStorage.value) {
+        isAllreadyLogin.value = isLogin.value = true;
+      }
+    }
+    // lifeCycles
+
+    // methods
+    const acceptCoockies = (): void => {
+      coockiesMessageShow.value = hellperAcceptCoockies();
+    };
 
     const login = (payload: Login): void => {
       if (isAllreadyLogin.value) {
@@ -67,7 +87,7 @@ export default defineComponent({
       }
     };
 
-    const setItemToLocalStorage = (payload: Login): void => {
+    const setItemToLocalStorage = (payload: LoginModel): void => {
       localStorage.setItem('username', payload.name);
       localStorage.setItem('password', payload.password);
     };
@@ -82,18 +102,7 @@ export default defineComponent({
       isAllreadyLogin.value = false;
       removeItemFromLocalStorage();
     };
-
-    function checkCoockie(): void {
-      if (getCoockieStatusFromLocalStorage.value) {
-        coockiesMessageShow.value = false;
-      }
-    }
-
-    function checkLogin(): void {
-      if (getItemFromLocalStorage.value) {
-        isAllreadyLogin.value = isLogin.value = true;
-      }
-    }
+    // methods
 
     return {
       coockiesMessageShow,
