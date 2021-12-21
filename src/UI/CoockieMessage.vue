@@ -18,14 +18,6 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from '@vue/runtime-core';
-
-export default defineComponent({
-  name: 'CoockieMessage',
-});
-</script>
-
 <style lang="scss" scoped>
 @import '@/assets/style/variables.scss';
 
