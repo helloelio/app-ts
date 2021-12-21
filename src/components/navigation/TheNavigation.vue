@@ -1,14 +1,14 @@
 <template>
-  <div id="nav">
+  <nav id="nav">
     <MainMenu />
     <div style="display: flex">
       <HamburgerMenu />
       <LogoutButton @logout="$emit('logout')" />
     </div>
-  </div>
-  <div class="plant">
+  </nav>
+  <section class="plant">
     <Plant />
-  </div>
+  </section>
 </template>
 
 <script lang="ts">

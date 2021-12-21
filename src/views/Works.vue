@@ -1,7 +1,7 @@
 <template>
-  <div class="works">
+  <section class="works">
     <WorkMain />
-  </div>
+  </section>
   <SocialsMain />
 </template>
 

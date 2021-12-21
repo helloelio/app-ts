@@ -1,8 +1,12 @@
 <template>
-  <h2 class="title">Socials <span class="blinked">_</span></h2>
-  <div class="socials">
-    <SocialsItems :socials="socials" />
-  </div>
+  <section class="socials">
+    <article>
+      <h2 class="title">Socials <span class="blinked">_</span></h2>
+      <div class="socials">
+        <SocialsItems :socials="socials" />
+      </div>
+    </article>
+  </section>
 </template>
 
 <script lang="ts">

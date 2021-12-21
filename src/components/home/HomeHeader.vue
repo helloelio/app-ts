@@ -1,25 +1,29 @@
 <template>
-  <div class="header">
-    <div class="title">Hello, I'm fronted developer</div>
-    <div class="subtitle">
-      <div class="about">
-        <div class="name">Gleb Medvedev</div>
-        <div class="proffesion">Artist, Musican enjoyer, Developer</div>
+  <section class="home-header">
+    <article>
+      <h2 class="title">Hello, I'm fronted developer</h2>
+      <div class="subtitle">
+        <div class="about">
+          <div class="name">Gleb Medvedev</div>
+          <div class="proffesion">Artist, Musican enjoyer, Developer</div>
+        </div>
+        <div class="subimage">
+          <img src="@/assets/images/my-photo.png" alt="" />
+        </div>
       </div>
-      <div class="subimage">
-        <img src="@/assets/images/my-photo.png" alt="" />
-      </div>
-    </div>
-  </div>
+    </article>
+  </section>
 </template>
 
 <style lang="scss" scoped>
 @import '@/assets/style/variables.scss';
-.header {
-  align-self: center;
-  text-align: center;
-  margin-bottom: 10px;
-  width: 100%;
+.home-header {
+  article {
+    align-self: center;
+    text-align: center;
+    margin-bottom: 10px;
+    width: 100%;
+  }
   .main-image {
     border-radius: 50%;
     height: 25ch;
@@ -29,6 +33,7 @@
     background-color: rgba(255, 255, 255, 0.16);
     padding: 10px 20px;
     border-radius: $main-radius;
+    font-weight: normal;
     font-size: 1rem;
     margin: 30px 0;
   }
@@ -58,7 +63,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .header {
+  .home-header {
     .title {
       font-size: 1rem;
     }

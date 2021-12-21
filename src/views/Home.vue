@@ -1,9 +1,9 @@
 <template>
-  <div class="home">
+  <section class="home">
     <HomeHeader />
     <HomeMain />
     <SocialsMain />
-  </div>
+  </section>
 </template>
 
 <script lang="ts">

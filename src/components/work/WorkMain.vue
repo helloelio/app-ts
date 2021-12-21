@@ -1,8 +1,10 @@
 <template>
-  <h2 class="title">Works <span class="blinked">_</span></h2>
-  <div class="works">
-    <WorkItem :works="works" />
-  </div>
+  <article>
+    <h2 class="title">Works <span class="blinked">_</span></h2>
+    <div class="works">
+      <WorkItem :works="works" />
+    </div>
+  </article>
 </template>
 
 <script lang="ts">
