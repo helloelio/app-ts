@@ -9,7 +9,7 @@
 import { defineComponent } from 'vue';
 import WrongFields from '@/UI/WrongFields.vue';
 import LoginFrom from '@/components/login/LoginForm.vue';
-import Login from '@/interfaces/Login';
+import LoginModel from '@/interfaces/LoginModel';
 import { ref } from 'vue';
 
 export default defineComponent({
@@ -29,7 +29,7 @@ export default defineComponent({
   },
 
   methods: {
-    login(payload: Login): void {
+    login(payload: LoginModel): void {
       if (payload.name === '' || payload.password === '') {
         this.validate = true;
         setTimeout(() => {
