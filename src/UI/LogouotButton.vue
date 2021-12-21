@@ -17,13 +17,6 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-export default defineComponent({
-  name: 'LogoutButton',
-});
-</script>
-
 <style lang="scss" scoped>
 .nav__logout {
   display: flex;
