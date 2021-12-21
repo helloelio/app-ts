@@ -27,15 +27,20 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue';
+import { defineComponent, toRefs, reactive } from 'vue';
+import LoginFromModels from '@/interfaces/LoginFormModel';
 
 export default defineComponent({
   name: 'LoginForm',
 
   setup(_, context) {
-    const name = ref('');
-    const pass = ref('');
-    let vissiblePassword = ref(false);
+    const state: LoginFromModels = reactive({
+      name: '',
+      pass: '',
+      vissiblePassword: false,
+    });
+
+    let { name, pass, vissiblePassword } = toRefs(state);
 
     function onSubmit(): void {
       context.emit('login', { name: name.value, password: pass.value });
