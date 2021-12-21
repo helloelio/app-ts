@@ -1,7 +1,7 @@
-interface StateMOdel {
+interface StateModel {
   isLogin: boolean;
   isAllreadyLogin: boolean;
   coockiesMessageShow: boolean;
 }
 
-export default StateMOdel;
+export default StateModel;
